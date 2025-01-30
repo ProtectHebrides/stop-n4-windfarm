@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop the N4 Wind Farm</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        h1 { color: red; }
+        p { font-size: 18px; }
+        .email-button {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 20px;
+            color: #fff;
+            background-color: #d9534f;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>🚨 Stop the N4 Wind Farm 🚨</h1>
+    <p>The proposed Spiorad na Mara wind farm threatens jobs, tourism, and wildlife in the Outer Hebrides. Demand a FULL PUBLIC INQUIRY before it’s too late!</p>
+    
+    <h2>📢 Take Action Now!</h2>
+    <p>Click the button below to send an email objection to decision-makers.</p>
+    
+    <button class="email-button" onclick="sendEmails()">📩 Send Objection Emails</button>
+    
+    <script>
+    function sendEmails() {
+        let recipients = [
+            "marine.consents@gov.scot",
+            "scottish.ministers@gov.scot",
+            "alasdair.allan.msp@parliament.scot"
+        ];
+        
+        let subject = "Objection to Spiorad na Mara Wind Farm";
+        
+        let body = `Dear Ms Turpie,%0D%0A%0D%0AI strongly object to the proposal by Northland Power/ESB or any other company to build an industrial windfarm on the near shore of the west side of Lewis.%0D%0A%0D%0AMy objections are as follows:%0D%0A- **Crown Estate seabed leasing**: The seabed lease was done without proper local consultation.%0D%0A- **Lack of consultation**: The local community was not given a fair say in the process.%0D%0A- **Jobs and population**: The wind farm threatens local livelihoods, especially in tourism and fishing.%0D%0A- **Environmental impact**: The project risks severe harm to marine life, seabirds, and coastal habitats.%0D%0A- **Cultural heritage**: The Gaelic-speaking communities of the Outer Hebrides will be adversely affected.%0D%0A%0D%0AI demand a full public inquiry before any approval is granted.%0D%0A%0D%0ASincerely,%0D%0AA Concerned Member of the Public`;
+
+        let index = 0;
+
+        function openNextEmail() {
+            if (index < recipients.length) {
+                window.location.href = `mailto:${recipients[index]}?subject=${subject}&body=${body}`;
+                index++;
+                setTimeout(openNextEmail, 2000); // Open next email after 2 seconds
+            }
+        }
+
+        openNextEmail();
+    }
+    </script>
+    
+    <p>For more information, visit <a href="https://www.emg-lewis.co.uk/take-action" target="_blank">Eilean mo Ghaoil - Take Action</a></p>
+</body>
+</html>
